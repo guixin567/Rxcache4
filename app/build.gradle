@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "zx.zw.rxcache1"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile "com.github.VictorAlbertos.RxCache:runtime:1.8.3-2.x"
+    compile 'com.github.VictorAlbertos.Jolyglot:gson:0.0.4'
+
+    // Architecture components
+    api deps.lifecycle.runtime
+    api deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    api deps.room.runtime
+    annotationProcessor deps.room.compiler
+    api deps.room.rxjava2
+
+    //rxjava
+    api deps.rx_android
+    api deps.rxjava2
+
+    api deps.retrofit.runtime
+    api deps.retrofit.gson
+    api deps.retrofit.adapters
+    api deps.okhttp_logging_interceptor
+
+    //glide
+    api deps.glide
+    annotationProcessor deps.glide_compiler
+    //component
+    api deps.constraint_layout
+    api deps.base_recyclerview_adapter_helper
+
+}
