@@ -12,5 +12,5 @@ import zx.zw.rxcache1.news.model.bean.NewsBean;
  */
 public interface NewsApi {
     @GET("index?key=56ebc185b95881f8ebdcd43b92507bc5&")
-    Observable<NewsBean> getNewsList(@Query("type")  String type);
+    Observable<<BaseResponse<NewsBean>> getNewsList(@Query("type")  String type);
 }
