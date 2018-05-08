@@ -9,6 +9,7 @@ import zx.zw.rxcache1.news.model.bean.NewsBean;
  * @author zxKueen 2018/3/10 14:04
  *         email 4994766@qq.com
  *         新闻相关的api接口
+ *         注意泛型是BaseResponse<T>
  */
 public interface NewsApi {
     @GET("index?key=56ebc185b95881f8ebdcd43b92507bc5&")
